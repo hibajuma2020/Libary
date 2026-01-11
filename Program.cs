@@ -49,7 +49,7 @@
                 {
 
                     case 1:
-                        //add new book
+                        //option1: add new book
                         Console.Write("Enter book title: ");
                         titles[lastBookIndex + 1] = Console.ReadLine();
 
@@ -69,14 +69,51 @@
 
                         break;
 
+                        case 2:
+                    //option2:  Borrow Book
+                    
+                        Console.Write("Enter ISBN: ");
+                        string borrowIsbn = Console.ReadLine();
 
+                        Console.Write("Enter borrower name: ");
+                        string borrowerName = Console.ReadLine();
 
+                        bool borrowFound = false;
 
+                        for (int i = 0; i <= lastBookIndex; i++)
+                        {
+                            if (isbns[i] == borrowIsbn)
+                            {
+                                borrowFound = true;
 
-
-
-
+                                if (isAvailable[i] == true)
+                                {
+                                    isAvailable[i] = false;
+                                    borrowers[i] = borrowerName;
+                                    Console.WriteLine("Book borrowed successfully!");
+                                }
+                                else
+                                {
+                                    Console.WriteLine("Book is already borrowed.");
+                                }
+                                break;
+                            }
+                        }
+                        if (borrowFound == false)
+                        {
+                            Console.WriteLine("Book not found.");
+                        }
                         break;
+
+
+
+
+
+
+
+
+
+
                     defualt:
                         break;
 
