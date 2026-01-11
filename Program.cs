@@ -105,6 +105,30 @@
                         }
                         break;
 
+                    case 3:
+                    // Option 3: Return Book
+                        Console.Write("Enter ISBN: ");
+                        string returnIsbn = Console.ReadLine();
+
+                        bool returnFound = false;
+
+                        for (int i = 0; i <= lastBookIndex; i++)
+                        {
+                            if (isbns[i] == returnIsbn)
+                            {
+                                returnFound = true;
+                                isAvailable[i] = true;
+                                borrowers[i] = "";
+                                Console.WriteLine("Book returned successfully!");
+                                break;
+                            }
+                        }
+
+                        if (returnFound == false)
+                        {
+                            Console.WriteLine("Book not found.");
+                        }
+                        break;
 
 
 
