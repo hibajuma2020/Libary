@@ -69,7 +69,6 @@
                         Console.WriteLine("Book added successfully!");
                         break;
 
-                        break;
 
                     case 2:
                         //option2:  Borrow Book
@@ -183,22 +182,72 @@
 
 
                         case 6:
-                        Console.WriteLine("");
+                        //transfer books
+;
+                        Console.WriteLine("Enter current  borrower:");
+                        string currentBorrower = Console.ReadLine();
+                        Console.WriteLine("Enter new  borrower:");
+                        string newBorrower = Console.ReadLine();
 
+                        bool currentBorrowerFound = false;
+                        int currentBorrowerIndex = 0;
 
+                        for (int i = 0; i <= lastBookIndex; i++)
+                        {
 
+                            if (currentBorrower == borrowers[i])
+                            {
+                                currentBorrowerIndex = i;
+                                currentBorrowerFound = true;
+
+                                break;
+                            }
+                        }
+                        if (currentBorrowerFound == false) 
+                        {
+                            Console.WriteLine("current borrower name not found");
+
+                        }
+                        else
+                        {
+                            bool newBorrowerFound = false;
+                            int newBorrowerIndex = 0;
+                            for (int i = 0; i <= lastBookIndex; i++)
+                            {
+                                if (newBorrower == borrowers[i])
+                                {
+                                    newBorrowerIndex = i;
+                                    newBorrowerFound = true;
+
+                                    break;
+                                }
+                            }
+                            if (newBorrowerFound == false) 
+                            {
+                                Console.WriteLine("new borrower name not found");
+
+                            }
+                            else
+                            {
+                                string temp = "";
+                                temp = borrowers[currentBorrowerIndex];
+                                borrowers[currentBorrowerIndex] = borrowers[newBorrowerIndex];
+                                borrowers[newBorrowerIndex] = temp;
+                            }
+                        }
                         break;
+                       
 
                     case 7:
-                    //EXIT
+                                //EXIT
 
-                        exit = true;
-                        break;
+                                exit = true;
+                                break;
 
-                    default:
-                        Console.WriteLine("Invalid option.");
-                        break;
-                }
+                            default:
+                                Console.WriteLine("Invalid option.");
+                                break;
+                            }
 
                 if (exit == true)
                 {
