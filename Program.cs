@@ -31,6 +31,8 @@
 
             lastBookIndex++;
 
+           bool exit=false;
+
             while (true)
             {
                 Console.WriteLine("Welcome to libary system");
@@ -172,24 +174,49 @@
                         {
                             if (isAvailable[i] ==true)
                             {
-                                Console.WriteLine("Available book: " + titles[i]);
+                                Console.WriteLine("Available book: " + titles[i] + authors[i] + isbns[i] +borrowers[i]);
 
                             }
                         }
 
                         break;
-                            defualt:
+
+
+                        case 6:
+                        Console.WriteLine("");
+
+
+
                         break;
 
+                    case 7:
+                    //EXIT
 
+                        exit = true;
+                        break;
 
+                    default:
+                        Console.WriteLine("Invalid option.");
+                        break;
                 }
+
+                if (exit == true)
+                {
+                    break;
+                }
+
+                Console.WriteLine("\nPress Enter to continue...");
+                Console.ReadLine();
+                Console.Clear();
+            }
+
+
+
+        }
 
 
             }
 
         }
-    }
-}
-
+  
 
