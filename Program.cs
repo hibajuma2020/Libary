@@ -33,7 +33,7 @@
 
             while (true)
             {
-                Console.WriteLine("Welcome to libary dystem");
+                Console.WriteLine("Welcome to libary system");
                 Console.WriteLine("1. Add New Book");
                 Console.WriteLine("2. Borrow Book");
                 Console.WriteLine("3. Return Book");
@@ -120,6 +120,7 @@
                                 isAvailable[i] = true;
                                 borrowers[i] = "";
                                 Console.WriteLine("Book returned successfully!");
+
                                 break;
                             }
                         }
@@ -140,15 +141,36 @@
 
                         for (int i = 0; i <= lastBookIndex; i++)
                         {
+                            if (isbns[i] == searchInput || titles[i] == searchInput)
+                            {
+                                searchFound = true;
+                                Console.WriteLine("Title: " + titles[i]);
+                                Console.WriteLine("Author: " + authors[i]);
+                                Console.WriteLine("ISBN: " + isbns[i]);
+                                Console.WriteLine("Available: " + isAvailable[i]);
+
+                                if (isAvailable[i] == false)
+                                {
+                                    Console.WriteLine("Borrowed by: " + borrowers[i]);
+                                }
+                                break;
+                            }
+                        }
+
+                        if (searchFound == false)
+                        {
+                            Console.WriteLine("Book not found.");
+                        }
+                        break;
 
 
 
 
 
-
-                            break;
-
-                    defualt:
+                        break;
+                           
+                           
+                            defualt:
                         break;
 
 
