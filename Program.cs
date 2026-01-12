@@ -140,34 +140,13 @@
 
                         for (int i = 0; i <= lastBookIndex; i++)
                         {
-                            if (isbns[i] == searchInput || titles[i] == searchInput)
-                            {
-                                searchFound = true;
-                                Console.WriteLine("Title: " + titles[i]);
-                                Console.WriteLine("Author: " + authors[i]);
-                                Console.WriteLine("ISBN: " + isbns[i]);
-                                Console.WriteLine("Available: " + isAvailable[i]);
-
-                                if (isAvailable[i] == false)
-                                {
-                                    Console.WriteLine("Borrowed by: " + borrowers[i]);
-                                }
-                                break;
-                            }
-                        }
-
-                        if (searchFound == false)
-                        {
-                            Console.WriteLine("Book not found.");
-                        }
-                        break;
 
 
 
 
 
 
-
+                            break;
 
                     defualt:
                         break;
