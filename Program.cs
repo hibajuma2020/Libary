@@ -69,9 +69,9 @@
 
                         break;
 
-                        case 2:
-                    //option2:  Borrow Book
-                    
+                    case 2:
+                        //option2:  Borrow Book
+
                         Console.Write("Enter ISBN: ");
                         string borrowIsbn = Console.ReadLine();
 
@@ -106,7 +106,7 @@
                         break;
 
                     case 3:
-                    // Option 3: Return Book
+                        // Option 3: Return Book
                         Console.Write("Enter ISBN: ");
                         string returnIsbn = Console.ReadLine();
 
@@ -131,9 +131,9 @@
                         }
                         break;
 
-                        case 4:
+                    case 4:
                         // Option 4: Search Book
-                    
+
                         Console.Write("Enter ISBN or Title: ");
                         string searchInput = Console.ReadLine();
 
@@ -161,15 +161,23 @@
                         {
                             Console.WriteLine("Book not found.");
                         }
+                
                         break;
 
 
+                    case 5:
+                        //List All Available Books 
+                        Console.WriteLine("List All Available Books: ");
+                        for(int i = 0;i<=lastBookIndex;i++)
+                        {
+                            if (isAvailable[i] ==true)
+                            {
+                                Console.WriteLine("Available book: " + titles[i]);
 
-
+                            }
+                        }
 
                         break;
-                           
-                           
                             defualt:
                         break;
 
